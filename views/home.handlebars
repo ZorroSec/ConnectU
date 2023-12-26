@@ -16,7 +16,7 @@
             background: #f4f4f4;
         }
         header.header{
-            background: rgb(5, 72, 83);
+            background: rgb(36,41,47);
             padding: 1em;
             color: white;
             display: flex;
@@ -71,5 +71,16 @@
             </div>
         </div>
     </header>
+    <section class="conteiner">
+        <div class="posts">
+            {{#each post}}
+                <div class="post">
+                    <div class="titleOfPost">
+                        <h3>{{titulo}}</h3>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </section>
 </body>
 </html>
