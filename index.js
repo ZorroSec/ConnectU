@@ -5,6 +5,7 @@ import { Sequelize } from "sequelize"
 import sequelize from "./db/db"
 import Posts from "./post/post"
 import { createConnection } from "mysql2"
+import connection from "./connection/connection"
 import path from 'path'
 const app = express()
 app.engine('handlebars', engine())
