@@ -2,10 +2,10 @@ import express from "express"
 import { engine } from "express-handlebars"
 import bodyParser from "body-parser"
 import { Sequelize } from "sequelize"
-import sequelize from "./db/db"
-import Posts from "./post/post"
+import sequelize from "./db/db.js"
+import Posts from "./post/post.js"
 import { createConnection } from "mysql2"
-import connection from "./connection/connection"
+import connection from "./connection/connection.js"
 import path from 'path'
 const app = express()
 app.engine('handlebars', engine())

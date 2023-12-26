@@ -1,5 +1,5 @@
 import { Sequelize } from "sequelize";
-import sequelize from "../db/db";
+import sequelize from "../db/db.js";
 
 const Posts = sequelize.define('posts', {
     id: {
