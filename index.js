@@ -20,6 +20,16 @@ app.get('/', (req, res)=>{
     })
 })
 
+app.get('/add', (req, res)=>{
+    for(let i=0; i<10; i++){
+        Posts.create({
+            nome: `Zezao${i}`,
+            post: `Hello world${i}`,
+            data: Date()
+        })
+    }
+})
+
 app.listen(3000, (err)=>{
     if(!err){
         console.log({message: 'success'})
