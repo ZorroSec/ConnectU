@@ -25,7 +25,8 @@ app.get('/add', (req, res)=>{
         Posts.create({
             nome: `Zezao${i}`,
             post: `Hello world${i}`,
-            data: Date()
+            data: Date(),
+            titulo: "Zezao Da luna"
         })
     }
 })

@@ -19,6 +19,10 @@ const Posts = sequelize.define('posts', {
     data: {
         type: Sequelize.DATE,
         allowNull: false
+    },
+    titulo: {
+        type: Sequelize.STRING,
+        allowNull: false
     }
 })
 
