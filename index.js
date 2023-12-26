@@ -15,8 +15,8 @@ app.use(bodyParser.json())
 app.use('css/', express.static('css/'))
 
 app.get('/', (req, res)=>{
-    connection.query("SELECT * FROM posts", (results, fields)=>{
-        res.render('home', { post: fields })
+    Posts.findAll().then(function(post){
+        res.render('home', { post: post })
     })
 })
 
