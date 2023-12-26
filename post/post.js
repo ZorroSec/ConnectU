@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 import sequelize from "../db/db";
 
-const Post = sequelize.define('posts', {
+const Posts = sequelize.define('posts', {
     id: {
         type: Sequelize.INTEGER,
         allowNull: false,
