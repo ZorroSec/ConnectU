@@ -74,6 +74,38 @@
             margin: auto;
             background-color: #f2f2f2;
         }
+        section.publicarComentario{
+            margin: auto;
+            width: 422px;
+            padding: 1em;
+            margin-top: 1em;
+            margin-bottom: 2.2em;
+        }
+        div.comentario{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        section.publicarComentario textarea{
+            border-radius: 5px;
+            box-shadow: 1px 0 2px rgba(0,0,0,.3);
+            padding: 1em;
+            resize: none;
+        }
+        div.options{
+            display: flex;
+            float: right;
+        }
+        div.options div.confirmar input{
+            border: none;
+            outline: none;
+            background-color: #1f883d;
+            border-radius: 4px;
+            padding: 10px 20px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -123,12 +155,26 @@
             </div>
         {{/each}}
     </section>
+    <section class="publicarComentario">
+        <div class="publicar">
+            <div class="comentario">
+                <textarea name="comentario" id="comentario" cols="30" rows="10" style="width: 422px; height: 250px;"></textarea>
+            </div>
+            <div class="options">
+                <div class="confirmar">
+                    <input type="submit" value="Publicar" name="submit">
+                </div>
+            </div>
+
+        </div>
+    </section>
     <section class="coments">
         {{#each comment}}
             <div class="comentarie">
                 <div class="infoComentary">
+                    <p style="font-size: ;">{{nome}}</p>
                     <p>{{updatedat}}</p>
-                    <p>{{nome}}</p>
+                    
                 </div>
                 <div class="comment">
                     <p>
