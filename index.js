@@ -26,7 +26,7 @@ app.get('/post/:id', (req, res)=>{
     connection.query(`SELECT * FROM posts WHERE id = ${req.params.id}`, (results, fields)=>{
         post = fields
         console.log(post)
-        connection.query(`SELECT * FROM comentarios WHERE idpost = ${req.params.id}`, (results, fields)=>{
+        connection.query(`SELECT * FROM comentarios WHERE idpost = ${req.params.id} ORDER BY id DESC`, (results, fields)=>{
             comentario = fields
             console.log(comentario)
             const idForPost = req.params.id
