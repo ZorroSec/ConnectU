@@ -46,9 +46,15 @@
         div.post{
             margin: auto;
             padding: 1em;
-            width: 60%;
+            width: 100%;
             background-color: #ffffff;
             box-shadow: 1px 0 3px rgb(36,41,47);
+            margin-top: 1em;
+        }
+        div.post div.postContent{
+            background: #f2f2f2;
+            margin: auto;
+            padding: 1em;
             margin-top: 1em;
         }
     </style>
@@ -87,10 +93,10 @@
         {{#each post}}
             <div class="post">
                 <div class="title">
-                    <h3 style="display: flex;">
+                    <h2 style="display: flex;">
                         <p style="margin-right: 1em;">{{id}}.</p>
-                        <a href="/post/{{id}}">{{titulo}}</a>
-                    </h3>
+                        <p>{{titulo}}</p>
+                    </h2>
                 </div>
                 <div class="postContent">
                     <p>
