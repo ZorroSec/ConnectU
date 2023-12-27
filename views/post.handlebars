@@ -46,7 +46,7 @@
         div.post{
             margin: auto;
             padding: 1em;
-            width: 100%;
+            width: 80%;
             background-color: #ffffff;
             box-shadow: 1px 0 3px rgb(36,41,47);
             margin-top: 1em;
@@ -55,6 +55,13 @@
             background: #f2f2f2;
             margin: auto;
             padding: 1em;
+            margin-top: 1em;
+        }
+        section.comment div.comentarie{
+            width: 100%;
+            padding: 1em;
+            background-color: #ffffff;
+            box-shadow: 1px 0 3px rgb(36,41,47);
             margin-top: 1em;
         }
     </style>
@@ -101,6 +108,21 @@
                 <div class="postContent">
                     <p>
                         {{post}}
+                    </p>
+                </div>
+            </div>
+        {{/each}}
+    </section>
+    <section class="coments">
+        {{#each comment}}
+            <div class="comentarie">
+                <div class="infoComentrary">
+                    <p>{{updatedAt}}</p>
+                    <p>{{nome}}</p>
+                </div>
+                <div class="comment">
+                    <p>
+                        {{comentario}}
                     </p>
                 </div>
             </div>

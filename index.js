@@ -4,6 +4,7 @@ import bodyParser from "body-parser"
 import { Sequelize } from "sequelize"
 import sequelize from "./db/db.js"
 import Posts from "./post/post.js"
+import Comentarios from "./comantarios/comentarios.js"
 import { createConnection } from "mysql2"
 import connection from "./connection/connection.js"
 const app = express()
@@ -20,12 +21,18 @@ app.get('/', (req, res)=>{
     })
 })
 app.get('/post/:id', (req, res)=>{
+    var post
+    var comentario
     connection.query(`SELECT * FROM posts WHERE id = ${req.params.id}`, (results, fields)=>{
-        // connection.query(`SELECT * FROM comentarios WHERE id = ${req.params.id}`, (result, field)=>{
-
-        // })
-        res.render('post', { post: fields })
+        post = fields
+        console.log(post)
+        connection.query(`SELECT * FROM comentarios WHERE idpost = ${req.params.id}`, (results, fields)=>{
+            comentario = fields
+            console.log(comentario)
+            res.render('post', { post: post, comment: fields })
+        })
     })
+    
 })
 
 app.get('/add', (req, res)=>{
@@ -37,6 +44,14 @@ app.get('/add', (req, res)=>{
             titulo: `Hello world${i}`
         })
     }
+})
+
+app.get('/add/comentario', (req, res)=>{
+    Comentarios.create({
+        idpost: '32',
+        comentario: "Hiii",
+        nome: "Zezao"
+    })
 })
 
 app.listen(3000, (err)=>{
