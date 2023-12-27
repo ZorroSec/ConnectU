@@ -57,12 +57,22 @@
             padding: 1em;
             margin-top: 1em;
         }
-        section.comment div.comentarie{
+        section.coments div.comentarie{
             width: 100%;
             padding: 1em;
             background-color: #ffffff;
             box-shadow: 1px 0 3px rgb(36,41,47);
             margin-top: 1em;
+        }
+        div.infoComentary{
+            display: flex;
+            gap: 1em;
+            font-size: 13px;
+        }
+        div.comment{
+            padding: 1em;
+            margin: auto;
+            background-color: #f2f2f2;
         }
     </style>
 </head>
@@ -116,8 +126,8 @@
     <section class="coments">
         {{#each comment}}
             <div class="comentarie">
-                <div class="infoComentrary">
-                    <p>{{updatedAt}}</p>
+                <div class="infoComentary">
+                    <p>{{updatedat}}</p>
                     <p>{{nome}}</p>
                 </div>
                 <div class="comment">
