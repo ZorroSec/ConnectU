@@ -81,10 +81,9 @@
         }
         section.publicarComentario{
             margin: auto;
-            width: 422px;
-            padding: 1em;
+            width: 80%;
+            margin-bottom: 1em;
             margin-top: 1em;
-            margin-bottom: 2.2em;
         }
         div.comentario{
             display: flex;
@@ -132,6 +131,17 @@
             margin-bottom: 10px;
             border-radius: 4px;
             padding: 10px 1em;
+        }
+        section.publicarComentario a{
+            padding: 10px 1em;
+            text-decoration: none;
+            
+            margin: auto;
+            background: #1f883d;
+            border-radius: 4px;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            color: white;
         }
     </style>
 </head>
@@ -187,23 +197,7 @@
         {{/each}}
     </section>
     <section class="publicarComentario">
-        <div class="publicar">
-            <form action="/post/{{idForPost}}" method="POST">
-
-                <div class="nome">
-                    <input type="text" name="nome" id="nome" placeholder="Nome">
-                </div>
-                <div class="comentario">
-                    <textarea name="comentario" id="comentario" cols="30" rows="10" style="width: 422px; height: 250px;"></textarea>
-                </div>
-                <div class="options">
-                    <div class="confirmar">
-                        <input type="submit" value="Enviar" name="submit" onclick="{{ submitBtn }}">
-                    </div>
-                </div>
-            </form>
-
-        </div>
+        <a href="/post/:id/comentar">Comentar</a>
     </section>
     <section class="coments">
         {{#each comment}}

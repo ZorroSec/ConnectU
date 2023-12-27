@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>ConnectU - Conectando todo o mundo</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+        }
+        body{
+            background: #f4f4f4;
+        }
+        header.header{
+            background: rgb(36,41,47);
+            padding: 1em;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1em;
+        }
+        header.header div.principalInfo{
+            display: flex;
+        }
+        header.header div.principalInfo a{
+            color: white;
+            text-decoration: none;
+        }
+        header.header div.linksSecundary div.links{
+            display: flex;
+            color: white;
+        }
+        header.header div.linksSecundary div.links div.link a{
+            margin-right: 1em;
+            color: white;
+            text-decoration: none;
+        }
+        a{
+            color: black;
+        }
+        div.post{
+            margin: auto;
+            padding: 1em;
+            width: 80%;
+            background-color: #ffffff;
+            box-shadow: 1px 0 3px rgb(36,41,47);
+            margin-top: 1em;
+        }
+        div.post div.postContent{
+            background: #f2f2f2;
+            margin: auto;
+            padding: 1em;
+            margin-top: 1em;
+        }
+        section.coments div.comentarie{
+            width: 50%;
+            margin: auto;
+            border-left: 2px solid rgba(109, 105, 105, 0.1);
+            padding: 1em;
+            /* background-color: #ffffff; */
+            /* box-shadow: 1px 0 3px rgb(36,41,47); */
+            margin-bottom: 1em;
+            margin-top: 1em;
+        }
+        div.infoComentary{
+            display: flex;
+            gap: 1em;
+            font-size: 13px;
+        }
+        div.comment{
+            padding: 1em;
+            margin: auto;
+        }
+        section.publicarComentario{
+            margin: auto;
+            width: 422px;
+            padding: 1em;
+            margin-top: 1em;
+            margin-bottom: 2.2em;
+        }
+        div.comentario{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        section.publicarComentario textarea{
+            border-radius: 5px;
+            box-shadow: 1px 0 2px rgba(0,0,0,.3);
+            padding: 1em;
+            resize: none;
+        }
+        div.options{
+            display: flex;
+            float: right;
+        }
+        div.options div.confirmar input{
+            border: none;
+            outline: none;
+            background-color: #1f883d;
+            border-radius: 4px;
+            padding: 10px 20px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            color: white;
+        }.username{
+            background-color: rgb(221,244,255);
+            color: #77c8ff;
+            border-radius: 5px;
+            padding: 4px;
+            margin-bottom: 5px;
+        }
+        .username:hover{
+            text-decoration: underline #77c8ff;
+        }
+        div.infoOfPostUser{
+            display: flex;
+            gap: 1em;
+            font-size: 13px;
+        }
+        div.nome input{
+            width: 100%;
+            background-color: nome;
+            border: 1px solid;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            padding: 10px 1em;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="principalInfo">
+            <div class="logo">
+                <h3>
+                    ConnectU
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cursor" viewBox="0 0 16 16">
+                        <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103zM2.25 8.184l3.897 1.67a.5.5 0 0 1 .262.263l1.67 3.897L12.743 3.52z"/>
+                    </svg>
+                </h3>
+            </div>
+            <div class="infoLinks">
+                <div class="link">
+                    <div class="homePage">
+                        <a href="/">Index</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="linksSecundary">
+            <div class="links">
+                <div class="link">
+                    <a href="/login">Login</a>
+                </div>
+                <div class="link">
+                    <a href="/cadastrar">Cadastrar</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <section class="publicarComentario">
+        <div class="publicar">
+            <form action="/post/{{idForPost}}" method="POST">
+
+                <div class="nome">
+                    <input type="text" name="nome" id="nome" placeholder="Nome">
+                </div>
+                <div class="comentario">
+                    <textarea name="comentario" id="comentario" cols="30" rows="10" style="width: 422px; height: 250px;"></textarea>
+                </div>
+                <div class="options">
+                    <div class="confirmar">
+                        <input type="submit" value="Enviar" name="submit" onclick="{{ submitBtn }}">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
