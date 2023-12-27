@@ -48,6 +48,7 @@
             display: flex;
             gap: 10px;
             color: black;
+            margin-left: 2.2em;
         }
         div.post a{
             color: black;
@@ -56,6 +57,7 @@
             margin-right: 1em;
             font-size: 13px;
             font-weight: none;
+            list-style: none;
         }
     </style>
 </head>
@@ -94,7 +96,8 @@
             {{#each post}}
                 <div class="post">
                     <div class="titleOfPost">
-                        <h3>
+                        <h3 style="display: flex;">
+                            <p style="margin-right: 1em;">{{id}}.</p>
                             <a href="/post/{{id}}">{{titulo}}</a>
                         </h3>
                     </div>
