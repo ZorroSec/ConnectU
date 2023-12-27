@@ -22,6 +22,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            margin-bottom: 1em;
         }
         header.header div.principalInfo{
             display: flex;
@@ -39,25 +40,16 @@
             color: white;
             text-decoration: none;
         }
+        a{
+            color: black;
+        }
         div.post{
-            width: 60%;
-            padding: 1em;
             margin: auto;
-        }
-        div.post div.infoOfPost ul{
-            display: flex;
-            gap: 10px;
-            color: black;
-            margin-left: 2.2em;
-        }
-        div.post a{
-            color: black;
-        }
-        div.post div.infoOfPost ul li{
-            margin-right: 1em;
-            font-size: 13px;
-            font-weight: none;
-            list-style: none;
+            padding: 1em;
+            width: 60%;
+            background-color: #ffffff;
+            box-shadow: 1px 0 3px rgb(36,41,47);
+            margin-top: 1em;
         }
     </style>
 </head>
@@ -94,21 +86,16 @@
     <section class="conteiner">
         {{#each post}}
             <div class="post">
-                <div class="titleOfPost">
+                <div class="title">
                     <h3 style="display: flex;">
                         <p style="margin-right: 1em;">{{id}}.</p>
                         <a href="/post/{{id}}">{{titulo}}</a>
                     </h3>
                 </div>
-                <div class="infoOfPost">
-                    <ul>
-                        <li>
-                            <p>{{updatedAt}}</p>
-                        </li>
-                        <li>
-                            <p>{{nome}}</p>
-                        </li>
-                    </ul>
+                <div class="postContent">
+                    <p>
+                        {{post}}
+                    </p>
                 </div>
             </div>
         {{/each}}
