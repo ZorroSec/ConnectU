@@ -47,13 +47,15 @@
         div.post div.infoOfPost ul{
             display: flex;
             gap: 10px;
-            color: white;
+            color: black;
         }
         div.post a{
             color: black;
         }
-        div.post div.infoOfPost ul li a{
-            
+        div.post div.infoOfPost ul li{
+            margin-right: 1em;
+            font-size: 15px;
+            font-weight: none;
         }
     </style>
 </head>
@@ -93,20 +95,18 @@
                 <div class="post">
                     <div class="titleOfPost">
                         <h3>
-                            {{titulo}}
+                            <a href="/post/{{id}}">{{titulo}}</a>
                         </h3>
                     </div>
                     <div class="infoOfPost">
-                        <a href="/post/{{id}}">
-                            <ul>
-                                <li>
-                                    <p>{{data}}</p>
-                                </li>
-                                <li>
-                                    <p>{{nome}}</p>
-                                </li>
-                            </ul>
-                        </a>
+                        <ul>
+                            <li>
+                                <p>{{updatedAt}}</p>
+                            </li>
+                            <li>
+                                <p>{{nome}}</p>
+                            </li>
+                        </ul>
                         </div>
                     </div>
                 </div>
