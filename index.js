@@ -21,7 +21,9 @@ app.get('/', (req, res)=>{
 })
 app.get('/post/:id', (req, res)=>{
     connection.query(`SELECT * FROM posts WHERE id = ${req.params.id}`, (results, fields)=>{
-        console.log(fields)
+        // connection.query(`SELECT * FROM comentarios WHERE id = ${req.params.id}`, (result, field)=>{
+
+        // })
         res.render('post', { post: fields })
     })
 })
