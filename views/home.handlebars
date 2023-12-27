@@ -39,6 +39,11 @@
             color: white;
             text-decoration: none;
         }
+        div.post{
+            width: 60%;
+            padding: 1em;
+            margin: auto;
+        }
     </style>
 </head>
 <body>
@@ -74,7 +79,29 @@
     <section class="conteiner">
         <div class="posts">
             {{#each post}}
-                {{nome}}
+                <div class="post">
+                    <div class="titleOfPost">
+                        <h3>
+                            {{titulo}}
+                        </h3>
+                    </div>
+                    <div class="infoOfPost">
+                        <a href="/post/{{id}}">
+                            <ul>
+                                <li>
+                                    <p>{{data}}</p>
+                                </li>
+                                <li>
+                                    <p>{{nome}}</p>
+                                </li>
+                                <li>
+                                    <a href="/post/{{id}}">Visitar</a>
+                                </li>
+                            </ul>
+                        </a>
+                        </div>
+                    </div>
+                </div>
             {{/each}}
         </div>
     </section>
