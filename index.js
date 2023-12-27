@@ -19,7 +19,12 @@ app.get('/', (req, res)=>{
         res.render('home', { post: fields })
     })
 })
-
+app.get('/post/:id', (req, res)=>{[
+    connection.query(`SELECT * FROM posts WHERE id = ${req.params.id}`, (results, fields)=>{
+        console.log(fields)
+        res.render('post', { post: fields })
+    })
+]})
 app.get('/add', (req, res)=>{
     for(let i=0; i<3; i++){
         Posts.create({

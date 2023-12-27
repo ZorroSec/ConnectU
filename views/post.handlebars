@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConnectU - Conectando todo o mundo</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+        body{
+            background: #f4f4f4;
+        }
+        header.header{
+            background: rgb(36,41,47);
+            padding: 1em;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header.header div.principalInfo{
+            display: flex;
+        }
+        header.header div.principalInfo a{
+            color: white;
+            text-decoration: none;
+        }
+        header.header div.linksSecundary div.links{
+            display: flex;
+            color: white;
+        }
+        header.header div.linksSecundary div.links div.link a{
+            margin-right: 1em;
+            color: white;
+            text-decoration: none;
+        }
+        div.post{
+            width: 60%;
+            padding: 1em;
+            margin: auto;
+        }
+        div.post div.infoOfPost ul{
+            display: flex;
+            gap: 10px;
+            color: black;
+            margin-left: 2.2em;
+        }
+        div.post a{
+            color: black;
+        }
+        div.post div.infoOfPost ul li{
+            margin-right: 1em;
+            font-size: 13px;
+            font-weight: none;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="principalInfo">
+            <div class="logo">
+                <h3>
+                    ConnectU
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cursor" viewBox="0 0 16 16">
+                        <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103zM2.25 8.184l3.897 1.67a.5.5 0 0 1 .262.263l1.67 3.897L12.743 3.52z"/>
+                    </svg>
+                </h3>
+            </div>
+            <div class="infoLinks">
+                <div class="link">
+                    <div class="homePage">
+                        <a href="/">Index</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="linksSecundary">
+            <div class="links">
+                <div class="link">
+                    <a href="/login">Login</a>
+                </div>
+                <div class="link">
+                    <a href="/cadastrar">Cadastrar</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="conteiner">
+        {{#each post}}
+            <div class="post">
+                <div class="titleOfPost">
+                    <h3 style="display: flex;">
+                        <p style="margin-right: 1em;">{{id}}.</p>
+                        <a href="/post/{{id}}">{{titulo}}</a>
+                    </h3>
+                </div>
+                <div class="infoOfPost">
+                    <ul>
+                        <li>
+                            <p>{{updatedAt}}</p>
+                        </li>
+                        <li>
+                            <p>{{nome}}</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        {{/each}}
+    </section>
+</body>
+</html>
