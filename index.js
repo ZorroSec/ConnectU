@@ -42,7 +42,16 @@ app.get('/post/:id/comentar', (req, res)=>{
 app.post('/post/:id/comentar', (req, res)=>{
     const idForPost = req.params.id
     function submitBtn(){
-        console.log(req.body.nome)
+        const nome = req.body.nome
+        const idPost = req.params.id
+        const comentario = req.body.comentario
+        const data = {
+            idpost: idPost,
+            comentario: comentario,
+            nome: nome
+        }
+        Comentarios.create(data)
+        res.redirect(`/post/${idForPost}`)
     }
     res.render('comentar', { idForPost: idForPost, submitBtn: submitBtn() })
 })
