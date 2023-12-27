@@ -58,10 +58,13 @@
             margin-top: 1em;
         }
         section.coments div.comentarie{
-            width: 100%;
+            width: 50%;
+            margin: auto;
+            border-left: 2px solid rgba(109, 105, 105, 0.1);
             padding: 1em;
-            background-color: #ffffff;
-            box-shadow: 1px 0 3px rgb(36,41,47);
+            /* background-color: #ffffff; */
+            /* box-shadow: 1px 0 3px rgb(36,41,47); */
+            margin-bottom: 1em;
             margin-top: 1em;
         }
         div.infoComentary{
@@ -72,7 +75,6 @@
         div.comment{
             padding: 1em;
             margin: auto;
-            background-color: #f2f2f2;
         }
         section.publicarComentario{
             margin: auto;
@@ -105,6 +107,20 @@
             margin-top: 5px;
             margin-bottom: 10px;
             color: white;
+        }.username{
+            background-color: rgb(221,244,255);
+            color: #77c8ff;
+            border-radius: 5px;
+            padding: 4px;
+            margin-bottom: 5px;
+        }
+        .username:hover{
+            text-decoration: underline #77c8ff;
+        }
+        div.infoOfPostUser{
+            display: flex;
+            gap: 1em;
+            font-size: 13px;
         }
     </style>
 </head>
@@ -141,6 +157,10 @@
     <section class="conteiner">
         {{#each post}}
             <div class="post">
+                <div class="infoOfPostUser">
+                    <p class="username">{{nome}}</p>
+                    <p>{{updatedAt}}</p>
+                </div>
                 <div class="title">
                     <h2 style="display: flex;">
                         <p style="margin-right: 1em;">{{id}}.</p>
@@ -172,7 +192,7 @@
         {{#each comment}}
             <div class="comentarie">
                 <div class="infoComentary">
-                    <p style="font-size: ;">{{nome}}</p>
+                    <p style="font-size: ;" class="username">{{nome}}</p>
                     <p>{{updatedat}}</p>
                     
                 </div>
