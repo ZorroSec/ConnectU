@@ -36,9 +36,7 @@ app.get('/post/:id', (req, res)=>{
     
 })
 app.get('/post/:id/comentar', (req, res)=>{
-    res.json({
-        message:'success'
-    })
+    res.render('comentar')
 })
 
 app.get('/add', (req, res)=>{
