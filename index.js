@@ -35,12 +35,10 @@ app.get('/post/:id', (req, res)=>{
     })
     
 })
-app.post('/post/:id', (req, res)=>{
-    function submitBtn(){
-        const nome = req.body.nome
-        console.log(nome)
-    }
-    res.render('post', { submitBtn: submitBtn() })
+app.get('/post/:id/comentar', (req, res)=>{
+    res.json({
+        message:'success'
+    })
 })
 
 app.get('/add', (req, res)=>{
