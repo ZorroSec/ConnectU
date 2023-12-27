@@ -29,14 +29,18 @@ app.get('/post/:id', (req, res)=>{
         connection.query(`SELECT * FROM comentarios WHERE idpost = ${req.params.id}`, (results, fields)=>{
             comentario = fields
             console.log(comentario)
-            res.render('post', { post: post, comment: fields })
+            const idForPost = req.params.id
+            res.render('post', { post: post, comment: fields, idForPost: idForPost })
         })
     })
     
 })
 app.post('/post/:id', (req, res)=>{
-    const nome = req.body.nome
-    console.log(nome)
+    function submitBtn(){
+        const nome = req.body.nome
+        console.log(nome)
+    }
+    res.render('post', { submitBtn: submitBtn() })
 })
 
 app.get('/add', (req, res)=>{
