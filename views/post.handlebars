@@ -125,6 +125,14 @@
             gap: 1em;
             font-size: 13px;
         }
+        div.nome input{
+            width: 100%;
+            background-color: nome;
+            border: 1px solid;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            padding: 10px 1em;
+        }
     </style>
 </head>
 <body>
@@ -180,14 +188,20 @@
     </section>
     <section class="publicarComentario">
         <div class="publicar">
-            <div class="comentario">
-                <textarea name="comentario" id="comentario" cols="30" rows="10" style="width: 422px; height: 250px;"></textarea>
-            </div>
-            <div class="options">
-                <div class="confirmar">
-                    <input type="submit" value="Publicar" name="submit">
+            <form action="/post/{{idForPost}}" method="POST">
+
+                <div class="nome">
+                    <input type="text" name="nome" id="nome" placeholder="Nome">
                 </div>
-            </div>
+                <div class="comentario">
+                    <textarea name="comentario" id="comentario" cols="30" rows="10" style="width: 422px; height: 250px;"></textarea>
+                </div>
+                <div class="options">
+                    <div class="confirmar">
+                        <input type="submit" value="Enviar" name="submit" onclick="{{ submitBtn }}">
+                    </div>
+                </div>
+            </form>
 
         </div>
     </section>
