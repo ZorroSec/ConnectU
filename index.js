@@ -34,6 +34,10 @@ app.get('/post/:id', (req, res)=>{
     })
     
 })
+app.post('/post/:id', (req, res)=>{
+    const nome = req.body.nome
+    console.log(nome)
+})
 
 app.get('/add', (req, res)=>{
     for(let i=0; i<3; i++){
