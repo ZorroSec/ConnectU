@@ -21,12 +21,12 @@ app.get('/', (req, res)=>{
 })
 
 app.get('/add', (req, res)=>{
-    for(let i=0; i<10; i++){
+    for(let i=0; i<3; i++){
         Posts.create({
             nome: `Zezao${i}`,
             post: `Hello world${i}`,
             data: Date(),
-            titulo: "Zezao Da luna"
+            titulo: `Hello world${i}`
         })
     }
 })
