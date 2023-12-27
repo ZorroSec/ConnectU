@@ -36,9 +36,16 @@ app.get('/post/:id', (req, res)=>{
     
 })
 app.get('/post/:id/comentar', (req, res)=>{
-    res.render('comentar')
+    const idForPost = req.params.id
+    res.render('comentar', { idForPost: idForPost })
 })
-
+app.post('/post/:id/comentar', (req, res)=>{
+    const idForPost = req.params.id
+    function submitBtn(){
+        console.log(req.body.nome)
+    }
+    res.render('comentar', { idForPost: idForPost, submitBtn: submitBtn() })
+})
 app.get('/add', (req, res)=>{
     for(let i=0; i<3; i++){
         Posts.create({
