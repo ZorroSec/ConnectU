@@ -7,6 +7,7 @@ import Posts from "./post/post.js"
 import Comentarios from "./comantarios/comentarios.js"
 import { createConnection } from "mysql2"
 import connection from "./connection/connection.js"
+import * as path from "path"
 const app = express()
 app.engine('handlebars', engine())
 app.set('view engine', 'handlebars')
@@ -14,6 +15,8 @@ app.set('views', './views')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use('css/', express.static('css/'))
+
+const userData = new Object()
 
 app.get('/', (req, res)=>{
     connection.query("SELECT * FROM posts ORDER BY id DESC", (results, fields)=>{
@@ -76,10 +79,17 @@ app.get('/login', (req, res)=>{
     res.render('login')
 })
 
-app.post('/login', (req, res)=>{
+app.post('/login', (req, res, next)=>{
     function loginBtn(){
-        const nome = req.body.user
-        console.log(nome)
+        // const email = req.body.email
+        const senha = req.body.senha
+        connection.query(`SELECT * FROM logins WHERE senha = ${senha}`, (results, fields)=>{
+            userData.nome = fields[0]['nome']
+            console.log(userData)
+            console.log(fields)
+            res.redirect('/')
+
+        })
     }
     res.render('login', { loginBtn: loginBtn() })
 })
