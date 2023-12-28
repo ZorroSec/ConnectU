@@ -72,6 +72,17 @@ app.get('/add/comentario', (req, res)=>{
     })
 })
 
+app.get('/login', (req, res)=>{
+    res.render('login')
+})
+
+app.post('/login', (req, res)=>{
+    function loginBtn(){
+        const nome = req.body.user
+        console.log(nome)
+    }
+    res.render('login', { loginBtn: loginBtn() })
+})
 app.listen(3000, (err)=>{
     if(!err){
         console.log({message: 'success'})
