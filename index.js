@@ -15,6 +15,7 @@ app.set('views', './views')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use('css/', express.static('css/'))
+app.use(express.static('scripts/'))
 
 const userData = new Object()
 
