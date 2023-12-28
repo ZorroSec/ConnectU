@@ -56,14 +56,12 @@ app.post('/post/:id/comentar', (req, res)=>{
     res.render('comentar', { idForPost: idForPost, submitBtn: submitBtn() })
 })
 app.get('/add', (req, res)=>{
-    for(let i=0; i<3; i++){
-        Posts.create({
-            nome: `Zezao${i}`,
-            post: `Hello world${i}`,
-            data: Date(),
-            titulo: `Hello world${i}`
-        })
-    }
+    Posts.create({
+        nome: `J da Luna`,
+        post: `Eu amo a luna maria brito de andrade`,
+        data: Date(),
+        titulo: `Eu amo ela...`
+    })
 })
 
 app.get('/add/comentario', (req, res)=>{
