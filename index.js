@@ -77,6 +77,7 @@ app.get('/add/comentario', (req, res)=>{
 })
 
 app.get('/login', (req, res)=>{
+    console.log(userData)
     res.render('login')
 })
 
